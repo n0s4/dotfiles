@@ -1,0 +1,74 @@
+# Config file for the helix editor.
+theme = 'dark_plus'
+
+[editor]
+idle-timeout = 0
+completion-trigger-len = 1
+
+color-modes = true
+cursorline = true
+
+indent-guides.render = true
+indent-guides.skip-levels = 1
+
+statusline.left   = ["mode", "spinner"]
+statusline.center = ["file-name", "file-modification-indicator"]
+
+rulers = [80]
+
+soft-wrap.enable = true
+soft-wrap.wrap-indicator = ""
+
+[editor.auto-pairs]
+'(' = ')'
+'[' = ']'
+'{' = '}'
+'<' = '>'
+'"' = '"'
+"'" = "'"
+'`' = '`'
+
+[editor.lsp]
+display-messages = true
+display-signature-help-docs = false
+
+[keys.insert]
+A-space = "normal_mode"
+
+C-n = "move_line_down"
+C-p = "move_line_up"
+C-f = "move_char_right"
+C-b = "move_char_left"
+A-f = "move_next_word_start"
+A-b = "move_prev_word_start"
+
+[keys.normal]
+
+X = "extend_line_above"
+A-x = "extend_to_line_bounds"
+
+C-r = ":reflow 100"
+m = { l = ["extend_to_line_bounds", "trim_selections"] }
+
+[keys.normal.space]
+space = ":write"
+F = "file_picker"
+f = "file_picker_in_current_directory"
+
+# boilerplate macros
+[keys.normal.space.B]
+# TODO: this is very ugly. Idea: pipe from files containing boilerplate?
+z = ":insert-output echo 'const std = @import(\"std\");\n\npub fn main() !void {}'"
+
+[keys.normal.A-t]
+p = ':vs ~/dev/test/python.py'
+h = ':vs ~/dev/test/html.html'
+r = ':vs ~/dev/test/rust.rs'
+m = ':vs ~/dev/test/markdown.md'
+g = ':vs ~/dev/test/go.go'
+z = ':vs ~/dev/test/zig.zig'
+
+[keys.select]
+
+X = "extend_line_above"
+A-x = "extend_to_line_bounds"

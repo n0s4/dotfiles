@@ -1,0 +1,57 @@
+# config file for alacritty terminal
+
+live_config_reload: true
+# live_config_reload: false
+
+window:
+  # opacity: 0.9
+  padding:
+    x: 0
+    y: 0
+
+font:
+  size: 16
+  normal:
+    family: "MapleMono NF"
+    style: "Regular"
+  bold:
+    family: "MapleMono NF"
+    style: "Bold"
+  italic:
+    family: "MapleMono NF"
+    style: "Italic"
+  offset:
+    x: 0
+    y: 0
+
+  glyph_offset:
+    x: 0
+    y: 0 
+
+
+colors:
+  primary:
+    background: "#101020"
+    foreground: "#ffeecc"
+    # foreground: "#ffdd88"
+  cursor:
+    text: "#000010"
+    # cursor: "#ffeecc"
+    cursor: "#ffdd88"
+  # normal:
+    # black:   '#666666'
+    # red:     '#ee3030'
+    # green:   '#00ff88'
+    # yellow:  '#ffdd00'
+    # blue:    '#8080cc'
+    # magenta: '#f00080'
+    # cyan:    '#00dddd'
+    # white:   '#ffeeaa'
+ 
+cursor:
+  style: Block
+  # style: Beam
+  unfocused_hollow: true
+
+shell:
+  program: /usr/bin/fish

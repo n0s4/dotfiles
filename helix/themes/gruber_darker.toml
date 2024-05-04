@@ -1,0 +1,162 @@
+# Template document for helix color schemes
+# See also: https://docs.helix-editor.com/themes.html
+#
+# NOTE: Keys default to the most specific parent value.
+#       e.g ui.cursor.primary > ui.cursor > ui
+
+# GENERAL ==============================
+
+warning = { fg = "brown" } # Editor warnings.
+error = { fg = "red" } # Editor errors, like mis-typing a command.
+info = { fg = "niagara" } # Contextual info in diagnostic messages (LSP).
+hint = { fg = "green" } # Code diagnostics hints (LSP).
+'diagnostic.error'.underline = { color = "red", style = "curl" } # Code diagnostics in editing area (LSP).
+'diagnostic.warning'.underline = { color = "brown", style = "curl" } # Code diagnostics in editing area (LSP).
+'diagnostic.info'.underline = { color = "niagara", style = "line" } # Code diagnostics in editing area (LSP).
+'diagnostic.hint'.underline = { color = "green", style = "line" } # Code diagnostics in editing area (LSP).
+
+# UI ==============================
+# For styling helix itself.
+
+'ui.background' = { bg = "bg", fg = "fg" } # Default background color.
+'ui.window' = { bg = "bg-1", fg = "bg2" } # Window border between splits.
+'ui.gutter' = { bg = "bg" } # Left gutter for diagnostics and breakpoints.
+
+'ui.text' = { fg = "fg", bg = "bg" } # Default text color.
+'ui.text.focus' = { bg = "bg1" } # Selection highlight in buffer-picker or file-picker.
+'ui.text.info' = { bg = "bg1", fg = "fg" } # Info popup contents (space mode menu).
+
+'ui.cursor' = { bg = "brown", fg = "bg" } # Fallback cursor colour, non-primary cursors when there are multiple (shift-c).
+'ui.cursor.primary' = { bg = "yellow", fg = "bg" } # The primary cursor when there are multiple (shift-c).
+# 'ui.cursor.insert' = { } # The cursor in insert mode (i).
+# 'ui.cursor.select' = { } # The cursor in select mode (v).
+'ui.cursor.match' = { bg = "bg4" } # The matching parentheses of that under the cursor.
+
+'ui.selection' = { bg = "bg2" } # All currently selected text.
+'ui.selection.primary' = { bg = "bg3" } # The primary selection when there are multiple.
+
+'ui.linenr' = { fg = "bg4" } # Line numbers.
+'ui.linenr.selected' = { fg = "yellow" } # Current line number.
+
+'ui.virtual' = { } # Namespace for additions to the editing area.
+'ui.virtual.ruler' = { bg = "bg-1" } # Vertical rulers (colored columns in editing area).
+'ui.virtual.whitespace' = { fg = "bg1" } # Whitespace markers in editing area.
+
+'ui.statusline' = { bg = "bg1", fg = "white" } # Status line.
+'ui.statusline.inactive' = { bg = "bg1", fg = "quartz" } # Status line in unfocused windows.
+"ui.statusline.normal" = { } # Statusline mode during normal mode (only if editor.color-modes is enabled)
+"ui.statusline.insert" = { fg = "wisteria" } # Statusline mode during insert mode (only if editor.color-modes is enabled)
+"ui.statusline.select" = { fg = "green" } # Statusline mode during select mode (only if editor.color-modes is enabled)
+
+'ui.help' = { fg = "niagara" } # `:command` descriptions above the command line.
+
+'ui.highlight' = { } # selected contents of symbol pickers (spc-s, spc-S) and current line in buffer picker (spc-b).
+
+'ui.menu' = { bg = "bg-1" } # Autocomplete menu.
+'ui.menu.selected' = { bg = "bg1" } # Selected autocomplete item.
+
+'ui.popup' = { bg = "bg-1" } # Documentation popups (space-k).
+'ui.popup.info' = { bg = "bg1", fg = "fg" } # Info popups box (space mode menu).
+
+
+# SYNTAX HIGHLIGHTING ==============================
+# All the keys here are Treesitter scopes.
+
+'property' = { } # Regex group names.
+'special' = { } # Special symbols e.g `?` in Rust, `...` in Hare.
+'attribute' = { } # Class attributes, html tag attributes.
+
+'type' = { fg = "quartz" } # Variable type, like integer or string, including program defined classes, structs etc..
+
+'constructor' = { fg = "green" } # Constructor method for a class or struct.
+
+'constant' = { fg = "quartz" } # Constant value
+'constant.builtin' = { } # Special constants like `true`, `false`, `none`, etc.
+'constant.builtin.boolean' = { } # True or False.
+'constant.character' = { } # Constant of character type.
+'constant.character.escape' = { fg = "brown" } # escape codes like \n.
+
+'string' = { fg = "green" } # String literal.
+
+'comment' = { fg = "brown" }
+'comment.documentation' = { fg = "green" }
+
+'variable' = { fg = "fg" } # Variable names.
+
+'label' = { fg = "niagara" } # Loop labels, among other things.
+
+'keyword' = { fg = "yellow", modifiers = ["bold"] } # Language reserved keywords.
+'keyword.directive' = { fg = "quartz" } # Preprocessor directives (#if in C...).
+
+'function' = { fg = "fg" }
+'function.builtin' = { fg = "yellow" }
+'function.macro' = { fg = "yellow" }
+
+'tag' = { } # As in <body> for html, css tags.
+'tag.error' = { } # Erroneous closing html tags.
+
+'namespace' = { } # Namespace or module identifier.
+
+
+# Markup ==============================
+# Colors for markup languages, like Markdown or XML.
+
+'markup.heading.1' = { fg = "yellow", modifiers = ["bold"], underline = { color = "yellow", style = "line" } } # Markdown heading 1 color.
+'markup.heading.2' = { fg = "wisteria", modifiers = ["bold"], underline = { color = "wisteria", style = "line" } } # Markdown heading 2 color.
+'markup.heading' = { fg = "niagara", modifiers = ["bold"], underline = { color = "niagara", style = "line" } } # Markdown heading 3 color.
+'markup.heading.marker' = { } # Hashtag color on Markdown headings.
+
+'markup.list' = { fg = "fg2" }
+
+'markup.bold' = { modifiers = ["bold"] } # Bold text.
+'markup.italic' = { modifiers = ["italic"] } # Italicised text.
+
+'markup.link' = { fg = "wisteria", underline = { color = "wisteria", style = "line" } } # Non-URL link references.
+'markup.link.url' = { fg = "niagara", underline = { color = "niagara", style = "line" } } # Urls pointed to by links.
+
+'markup.quote' = { fg = "green", modifiers = "italic" } # `> Quotes` in Markdown.
+
+
+# Markup - Interface ==============================
+# "These scopes are used for theming the editor interface."
+
+'markup.normal' = { }
+'markup.normal.completion' = { } # For completion doc popup ui.
+'markup.normal.raw' = { } # For hover popup ui.
+
+'markup.heading.completion' = { } # Headings for completion doc popup ui.
+'markup.heading.raw' = { } # Headings for hover popup ui.
+
+'markup.raw' = { bg = "bg-1" } # Code block in Markdown.
+
+# Diff ==============================
+# Version control changes.
+
+'diff.plus' = { fg = "green" }
+'diff.minus' = { bg = "red1" }
+'diff.delta' = { fg = "wisteria" }
+
+
+[palette]
+fg       = "#e4e4ef"
+fg1      = "#f4f4ff"
+fg2      = "#f5f5f5"
+white    = "#ffffff"
+black    = "#000000"
+bg-1      = "#101010"
+bg       = "#181818"
+bg1      = "#282828"
+bg2      = "#453d41"
+bg3      = "#484848"
+bg4      = "#52494e"
+red-1     = "#c73c3f"
+red      = "#f43841"
+red1     = "#ff4f58"
+green    = "#73c936"
+yellow   = "#ffdd33"
+brown    = "#cc8c3c"
+quartz   = "#95a99f"
+niagara-2 = "#303540"
+niagara-1 = "#565f73"
+niagara  = "#96a6c8"
+wisteria = "#9e95c7"
